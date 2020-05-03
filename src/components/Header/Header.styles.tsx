@@ -67,8 +67,20 @@ export const HeaderLinkContainer = styled.div`
   }
 `;
 
+export const MobileLinksButton = styled.div`
+  width: 50px;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  ${mq({
+    display: ['flex', 'none']
+  })}
+`;
+
 export const LinksContainer = styled.div`
-  display: flex;
+  ${mq({
+    display: ['none', 'flex']
+  })}
   justify-content: center;
   flex-direction: row;
 
@@ -83,4 +95,17 @@ export const LinksContainer = styled.div`
       margin-left: 0;
     }
   }
+`;
+
+export const HamburgerContainer = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const HamburgerPatty = styled.div`
+  width: 35px;
+  height: 2px;
+  background-color: ${primary.color};
+  margin: 10px 0;
 `;

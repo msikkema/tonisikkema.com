@@ -8,7 +8,10 @@ import {
   HeaderContainer,
   SLink,
   Star,
-  LinksContainer
+  LinksContainer,
+  MobileLinksButton,
+  HamburgerPatty,
+  HamburgerContainer
 } from './Header.styles';
 
 const pages = [
@@ -30,6 +33,14 @@ const pages = [
   },
 ];
 
+const Hamburger: FunctionComponent = () => (
+  <HamburgerContainer>
+    <HamburgerPatty />
+    <HamburgerPatty />
+    <HamburgerPatty />
+  </HamburgerContainer>
+);
+
 const HeaderLink: FunctionComponent<HeaderLinkProps> = ({
   text,
   selected,
@@ -46,6 +57,10 @@ const HeaderLink: FunctionComponent<HeaderLinkProps> = ({
 const Header: FunctionComponent<HeaderProps> = ({ selected }) => (
   <SHeader>
     <HeaderContainer>
+      <MobileLinksButton>
+        <Hamburger />
+      </MobileLinksButton>
+
       <SLink to="/">
         <Star>&#9733;</Star> Toni Sikkema <Star>&#9733;</Star>
       </SLink>
