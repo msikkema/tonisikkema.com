@@ -8,9 +8,10 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Header, { Headings } from './Header';
+import Header from './Header';
 import '../styles/fonts.css';
 import { body } from '../styles/palette';
+import { Headings } from './Header/Header.types';
 
 type Props = {
   children: ReactNode;
@@ -46,15 +47,12 @@ const Layout: FunctionComponent<Props> = ({ children, heading }) => {
       <div
         style={{
           margin: '0 auto',
-          maxWidth: 960,
-          padding: '0 1.0875rem 1.45rem',
+          maxWidth: '1200px',
+          padding: '25px 1.0875rem 1.45rem',
         }}
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     </>

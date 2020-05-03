@@ -11,9 +11,32 @@ import {
   LinksContainer
 } from './Header.styles';
 
-const HeaderLink: FunctionComponent<HeaderLinkProps> = ({ text, selected }) => (
+const pages = [
+  {
+    page: 'ABOUT',
+    link: '/'
+  },
+  {
+    page: 'RESEARCH',
+    link: '/research'
+  },
+  {
+    page: 'VOLUNTEERING',
+    link: '/volunteering'
+  },
+  {
+    page: 'CONTACT',
+    link: '/contact'
+  },
+];
+
+const HeaderLink: FunctionComponent<HeaderLinkProps> = ({
+  text,
+  selected,
+  link
+}) => (
   <HeaderLinkContainer>
-    <Link selected={selected === text}>
+    <Link fade duration={0.3} selected={selected === text} to={link}>
       {text}
     </Link>
     {selected === text && <SelectedArrow />}
@@ -29,8 +52,8 @@ const Header: FunctionComponent<HeaderProps> = ({ selected }) => (
     </HeaderContainer>
 
     <LinksContainer>
-      {['ABOUT', 'RESEARCH', 'VOLUNTEERING', 'CONTACT'].map(link => (
-        <HeaderLink key={link} text={link} selected={selected}/>
+      {pages.map(({ page, link }) => (
+        <HeaderLink key={page} text={page} link={link} selected={selected}/>
       ))}
     </LinksContainer>
   </SHeader>

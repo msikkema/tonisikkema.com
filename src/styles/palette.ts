@@ -9,3 +9,13 @@ export const primary = {
   backgroundColor: '#EE6C4D',
   color: '#FCFCFC'
 };
+
+export const secondary = {
+  backgroundColor: '#FCFCFC',
+  color: '#3D5A80'
+};
+
+export const panel = {
+  backgroundColor: '#EFECE4',
+  color: '#293241'
+};
